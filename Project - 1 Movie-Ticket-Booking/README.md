@@ -41,31 +41,42 @@ Rajiv Gandhi Institute of Petroleum Technology (RGIPT)
 ## Project Structure
 
 ```text
-Movie-Ticket-Booking/
+Project - 1 Movie-Ticket-Booking/
 │
 ├── index.html
 ├── login.html
 ├── booking.html
 ├── view.html
+├── database.sql
+├── README.md
 │
 ├── css/
 │   └── style.css
 │
 ├── js/
-│   ├── login.js
 │   ├── booking.js
+│   ├── login.js
 │   └── view.js
 │
 ├── php/
-│   ├── db.php
-│   ├── login.php
 │   ├── book.php
-│   └── fetch.php
+│   ├── bootstrap.php
+│   ├── config.php
+│   ├── db.php
+│   ├── fetch.php
+│   ├── login.php
+│   └── test_connection.php
 │
 ├── images/
+│   ├── galactic_odyssey.png
+│   ├── shadow_knight.png
+│   └── whispers_forest.png
 │
-├── database.sql
-└── README.md
+├── local_Testing/
+│   └── 1.png to 8.png (Local deployment/testing screenshots)
+│
+└── Cloud_Testing/
+    └── 1.png to 12.png (Cloud deployment/testing screenshots)
 ```
 
 ---

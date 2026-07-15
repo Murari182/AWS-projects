@@ -53,17 +53,23 @@ This repository includes projects and experiments involving services such as:
 ```text
 AWS-PROJECTS/
 │
-├── Project-1/
+├── Project - 1 Movie-Ticket-Booking/
+│   ├── index.html
+│   ├── login.html
+│   ├── booking.html
+│   ├── view.html
+│   ├── database.sql
 │   ├── README.md
-│   ├── Source-Code/
-│   ├── Documentation/
-│   ├── Architecture/
-│   └── Screenshots/
+│   ├── css/
+│   ├── js/
+│   ├── php/
+│   ├── images/
+│   ├── local_Testing/
+│   └── Cloud_Testing/
 │
-├── Project-2/
+├── Notes/
 │
-├── Project-3/
-│
+├── LICENSE
 └── README.md
 ```
 
