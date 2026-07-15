@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - CineReserve</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+    <!-- Animated background bubbles -->
+    <div class="glow-bg">
+        <div class="ball ball-1"></div>
+        <div class="ball ball-2"></div>
+    </div>
+    
+    <header class="auth-header">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-ticket-simple logo-icon"></i>
+            <span>Cine<span class="highlight">Reserve</span></span>
+        </a>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-card">
+            <div class="auth-card-header">
+                <h2>Welcome Back</h2>
+                <p>Log in to access the booking manager</p>
+            </div>
+            
+            <div id="error-container" class="error-container hidden">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span id="error-message">Invalid username or password.</span>
+            </div>
+
+            <form id="login-form" class="auth-form" novalidate>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-user input-icon"></i>
+                        <input type="text" id="username" placeholder="Enter username" required autocomplete="username">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input type="password" id="password" placeholder="Enter password" required autocomplete="current-password">
+                        <button type="button" id="toggle-password" class="password-toggle-btn" tabindex="-1">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" id="submit-btn" class="btn btn-primary btn-block">
+                    <span>Log In</span>
+                    <i class="fa-solid fa-arrow-right btn-icon"></i>
+                </button>
+            </form>
+            
+            <div class="auth-card-footer">
+                <p><a href="index.html"><i class="fa-solid fa-arrow-left-long"></i> Back to Homepage</a></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

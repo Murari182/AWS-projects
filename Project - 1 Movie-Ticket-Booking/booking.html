@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Movie Ticket - CineReserve</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="protected-page hidden-content">
+    <!-- Glow background bubbles -->
+    <div class="glow-bg">
+        <div class="ball ball-1"></div>
+        <div class="ball ball-2"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-ticket-simple logo-icon"></i>
+                <span>Cine<span class="highlight">Reserve</span></span>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="booking.html" class="nav-link active">Book Ticket</a>
+                <a href="view.html" class="nav-link">View Bookings</a>
+                <button id="logout-btn" class="btn btn-outline btn-sm">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-container">
+        <div class="form-card">
+            <div class="form-card-header">
+                <h2>Movie Ticket Booking</h2>
+                <p>Fill out the details below to book tickets instantly</p>
+            </div>
+
+            <!-- Client/Server error container -->
+            <div id="validation-summary" class="error-container hidden">
+                <i class="fa-solid fa-circle-xmark"></i>
+                <span id="validation-errors"></span>
+            </div>
+
+            <form id="booking-form" class="booking-form" novalidate>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label for="customer-name">Customer Name</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-user input-icon"></i>
+                            <input type="text" id="customer-name" placeholder="John Doe" required autocomplete="name">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group col-6">
+                        <label for="email">Email Address</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-envelope input-icon"></i>
+                            <input type="email" id="email" placeholder="john.doe@example.com" required autocomplete="email">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="movie-select">Select Movie</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-film input-icon"></i>
+                        <select id="movie-select" required>
+                            <option value="" disabled selected>Choose a movie...</option>
+                            <option value="The Galactic Odyssey">The Galactic Odyssey (Sci-Fi)</option>
+                            <option value="Shadow of the Knight">Shadow of the Knight (Action/Noir)</option>
+                            <option value="Whispers of the Forest">Whispers of the Forest (Fantasy)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label for="seats">Number of Seats</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-chair input-icon"></i>
+                            <input type="number" id="seats" min="1" max="10" value="1" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group col-6">
+                        <label for="booking-date">Booking Date</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-calendar input-icon"></i>
+                            <input type="date" id="booking-date" required>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" id="book-btn" class="btn btn-primary btn-block">
+                    <i class="fa-solid fa-ticket btn-icon-left"></i>
+                    <span>Book Ticket</span>
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Success Modal Popup -->
+    <div id="success-modal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <div class="modal-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3>Ticket Booked Successfully!</h3>
+            <p class="modal-desc">Your booking request has been confirmed. Below are your booking details:</p>
+            <div class="modal-details">
+                <div class="detail-row">
+                    <span class="detail-label">Booking ID</span>
+                    <span id="success-booking-id" class="detail-value highlight">#1024</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Customer Name</span>
+                    <span id="success-name" class="detail-value">John Doe</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Movie</span>
+                    <span id="success-movie" class="detail-value">The Galactic Odyssey</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Seats</span>
+                    <span id="success-seats" class="detail-value">2 Seats</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Date</span>
+                    <span id="success-date" class="detail-value">2026-07-20</span>
+                </div>
+            </div>
+            <button id="modal-close-btn" class="btn btn-primary btn-block">Done</button>
+        </div>
+    </div>
+
+    <!-- JS Controllers -->
+    <script src="js/booking.js"></script>
+</body>
+</html>

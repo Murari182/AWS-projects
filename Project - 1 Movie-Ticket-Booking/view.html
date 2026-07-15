@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Bookings - CineReserve</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="protected-page hidden-content">
+    <!-- Glow background bubbles -->
+    <div class="glow-bg">
+        <div class="ball ball-1"></div>
+        <div class="ball ball-2"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-ticket-simple logo-icon"></i>
+                <span>Cine<span class="highlight">Reserve</span></span>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="booking.html" class="nav-link">Book Ticket</a>
+                <a href="view.html" class="nav-link active">View Bookings</a>
+                <button id="logout-btn" class="btn btn-outline btn-sm">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-container wide-page">
+        <div class="table-card">
+            <div class="table-card-header">
+                <div>
+                    <h2>Manage Bookings</h2>
+                    <p>Track all current movie reservations</p>
+                </div>
+                <div class="header-controls">
+                    <!-- Search Bar -->
+                    <div class="search-wrapper">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" id="search-input" placeholder="Search bookings...">
+                    </div>
+                    <!-- Counter badge -->
+                    <div class="badge">
+                        <span>Total: </span><span id="bookings-count">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error message container -->
+            <div id="fetch-error" class="error-container hidden">
+                <i class="fa-solid fa-circle-xmark"></i>
+                <span id="error-text">Failed to fetch data.</span>
+            </div>
+
+            <!-- Table responsive wrapper -->
+            <div class="table-responsive">
+                <table class="bookings-table">
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Customer Name</th>
+                            <th>Email</th>
+                            <th>Movie Name</th>
+                            <th>Seats</th>
+                            <th>Booking Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookings-table-body">
+                        <!-- Table content will be injected by JavaScript -->
+                        <tr class="table-state-row">
+                            <td colspan="6" class="text-center">
+                                <i class="fa-solid fa-spinner fa-spin table-spinner"></i>
+                                Loading reservations...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- JS Controllers -->
+    <script src="js/view.js"></script>
+</body>
+</html>
